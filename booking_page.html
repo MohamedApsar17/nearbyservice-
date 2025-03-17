@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header Section -->
+    <header class="text-center py-8 bg-gradient-to-r from-green-300 to-teal-400 shadow-md">
+        <h1 class="text-3xl font-bold">Booking Form</h1>
+        <p class="text-lg mt-2">Fill in the details below to confirm your booking</p>
+    </header>
+
+    <!-- Back Button -->
+    <div class="px-6 mt-4">
+        <button onclick="history.back()" class="text-white bg-gray-700 px-4 py-2 rounded-lg shadow hover:bg-gray-800 transition">
+            ⬅ Back
+        </button>
+    </div>
+
+    <!-- Booking Form -->
+    <section class="flex justify-center py-10">
+        <form class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8" action="booking_confirmation.html" method="POST">
+            <!-- User Name -->
+            <div class="mb-6">
+                <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                <input type="text" id="name" name="name" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500">
+            </div>
+
+            <!-- Contact Number -->
+            <div class="mb-6">
+                <label for="contact" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                <input type="tel" id="contact" name="contact" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500">
+            </div>
+
+            <!-- Booking Date -->
+            <div class="mb-6">
+                <label for="date" class="block text-sm font-medium text-gray-700">Preferred Date</label>
+                <input type="date" id="date" name="date" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500">
+            </div>
+
+            <!-- Additional Instructions -->
+            <div class="mb-6">
+                <label for="instructions" class="block text-sm font-medium text-gray-700">Additional Instructions</label>
+                <textarea id="instructions" name="instructions" rows="4"
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full px-6 py-2 bg-teal-500 text-white font-semibold rounded-lg shadow hover:bg-teal-600 transition"><a href="booking_cnfrm.html">
+                Confirm Booking
+            </button></a>
+        </form>
+    </section>
+</body>
+</html>

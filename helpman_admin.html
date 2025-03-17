@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpman Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+        }
+        .admin-container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar nav ul li a i {
+            margin-right: 10px;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        .header-actions input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .add-btn, .edit-btn, .delete-btn, .approve-btn, .reject-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-btn {
+            margin-bottom: 10px;
+        }
+        .add-btn:hover, .edit-btn:hover, .delete-btn:hover, .approve-btn:hover, .reject-btn:hover {
+            background-color: #0056b3;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>Helpman Admin</h2>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#manage-labor"><i class="fas fa-users"></i> Manage Labor</a></li>
+                    <li><a href="#add-helpman"><i class="fas fa-user-plus"></i> Add Helpman</a></li>
+                    <li><a href="#manage-requests"><i class="fas fa-tasks"></i> Manage Requests</a></li>
+                    <li><a href="#reports"><i class="fas fa-chart-line"></i> Reports</a></li>
+                    <li><a href="#settings"><i class="fas fa-cogs"></i> Settings</a></li>
+                    <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="admin-header">
+                <h1>Welcome, Admin!</h1>
+                <div class="header-actions">
+                    <input type="search" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </header>
+
+            <section id="dashboard" class="section">
+                <h2>Dashboard Overview</h2>
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <h3>Total Laborers</h3>
+                        <p>120</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Requests</h3>
+                        <p>45</p>
+                    </div>
+                    <div class="card">
+                        <h3>Completed Tasks</h3>
+                        <p>98</p>
+                    </div>
+                    <div class="card">
+                        <h3>Revenue</h3>
+                        <p>$12,300</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="manage-labor" class="section">
+                <h2>Manage Labor</h2>
+                <button class="add-btn">Add Laborer</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Specialization</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>Electrician</td>
+                            <td>New York</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="add-helpman" class="section">
+                <h2>Add Helpman</h2>
+                <form id="add-helpman-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter name" required>
+
+                    <label for="specialization">Specialization:</label>
+                    <input type="text" id="specialization" placeholder="Enter specialization" required>
+
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" placeholder="Enter location" required>
+
+                    <label for="contact">Contact Information:</label>
+                    <input type="text" id="contact" placeholder="Enter contact information" required>
+
+                    <button type="submit">Register Helpman</button>
+                </form>
+            </section>
+
+            <section id="manage-requests" class="section">
+                <h2>Manage Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Customer Name</th>
+                            <th>Service Required</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Jane Smith</td>
+                            <td>Plumbing</td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="approve-btn">Approve</button>
+                                <button class="reject-btn">Reject</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="reports" class="section">
+                <h2>Reports</h2>
+                <p>Generate and view reports on laborers, tasks, and revenue.</p>
+                <button>Generate Report</button>
+            </section>
+
+            <section id="settings" class="section">
+                <h2>Settings</h2>
+                <form>
+                    <label for="admin-email">Admin Email:</label>
+                    <input type="email" id="admin-email" placeholder="admin@example.com">
+
+                    <label for="password">Change Password:</label>
+                    <input type="password" id="password">
+
+                    <button type="submit">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                if (confirm('Are you sure you want to delete this laborer?')) {
+                    alert('Laborer deleted successfully.');
+                }
+            });
+        });
+
+        document.querySelectorAll('.approve-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Request approved successfully.');
+            });
+        });
+
+        document.querySelectorAll('.reject-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Request rejected.');
+            });
+        });
+
+        document.querySelector('#add-helpman-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.querySelector('#name').value;
+            const specialization = document.querySelector('#specialization').value;
+            const location = document.querySelector('#location').value;
+            const contact = document.querySelector('#contact').value;
+
+            if (name && specialization && location && contact) {
+                alert(`Helpman ${name} registered successfully!`);
+                document.querySelector('#add-helpman-form').reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

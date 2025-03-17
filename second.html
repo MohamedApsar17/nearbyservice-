@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandyConnect - Buy/Sell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-teal-900 text-white p-4 flex justify-between items-center">
+        <div class="text-2xl font-bold">HandyConnect</div>
+        <div class="flex-1 mx-4">
+            <input type="text" placeholder="Search for items, brands, and more..." class="w-full p-2 rounded-lg border border-gray-300">
+        </div>
+        <div>
+            <button onclick="location.href='selling.html'" class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg">Go to Selling Page</button>
+        </div>
+    </header>
+
+    <main class="p-6">
+        <div class="flex justify-center gap-4 mb-6">
+            <button id="buyTab" class="px-6 py-2 bg-teal-900 text-white rounded-lg hover:bg-teal-700">Buying</button>
+            <button id="sellTab" class="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-400"><a href="selling.html"></button></a>
+        </div>
+
+        <!-- Buying Section -->
+        <section id="buySection">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-6">Browse Categories</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Category: Cars -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
+                    <img src="image/homeappliance2.jpg" alt="Home Appliances" class="w-full h-35 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-medium text-gray-700">Home Appliances</h3>
+                        <p class="text-gray-500">Top deals on appliances</p>
+                        <button class="mt-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-600">View More</button>
+                    </div>
+                </div>
+
+                <!-- Category: Mobiles -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
+                    <img src="image/Mobiles.jpg" alt="Mobiles" class="w-full h-35 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-medium text-gray-700">Mobiles</h3>
+                        <p class="text-gray-500">Explore the latest smartphones.</p>
+                        <button class="mt-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-600">View More</button>
+                    </div>
+                </div>
+
+                <!-- Category: Furniture -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
+                    <img src="image/furniture.jpg" alt="Furniture" class="w-full h-35 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-medium text-gray-700">Furniture</h3>
+                        <p class="text-gray-500">Affordable and stylish furniture.</p>
+                        <button class="mt-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-600">View More</button>
+                    </div>
+                </div>
+
+                <!-- Category: Home Appliances -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
+                    <img src="image/car4.webp" alt="Home Appliances" class="w-full h-35 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-medium text-gray-700">Cars</h3>
+                        <p class="text-gray-500">Best cars in  the Town</p>
+                        <button class="mt-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-600">View More</button>
+                    </div>
+                </div>
+
+                <!-- Add more categories as needed -->
+            </div>
+        </section>
+
+        <!-- Selling Section -->
+        <section id="sellSection" class="hidden">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-6">Post Your Ad</h1>
+            <form class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                <div>
+                    <label for="title" class="block text-gray-700 font-medium">Title</label>
+                    <input type="text" id="title" placeholder="Ad Title" class="w-full p-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="category" class="block text-gray-700 font-medium">Category</label>
+                    <select id="category" class="w-full p-2 border border-gray-300 rounded-lg">
+                        <option>Cars</option>
+                        <option>Mobiles</option>
+                        <option>Furniture</option>
+                        <option>Home Appliances</option>
+                        <!-- Add more categories -->
+                    </select>
+                </div>
+                <div>
+                    <label for="description" class="block text-gray-700 font-medium">Description</label>
+                    <textarea id="description" rows="4" placeholder="Describe your item..." class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+                </div>
+                <div>
+                    <label for="price" class="block text-gray-700 font-medium">Price</label>
+                    <input type="text" id="price" placeholder="Price in USD" class="w-full p-2 border border-gray-300 rounded-lg">
+                </div>
+                <button type="submit" class="w-full bg-teal-900 text-white p-2 rounded-lg hover:bg-teal-700">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-teal-900 text-white text-center p-4">
+        &copy; 2025 HandyConnect. All rights reserved.
+    </footer>
+
+    <script>
+        const buyTab = document.getElementById('buyTab');
+        const sellTab = document.getElementById('sellTab');
+        const buySection = document.getElementById('buySection');
+        const sellSection = document.getElementById('sellSection');
+
+        buyTab.addEventListener('click', () => {
+            buySection.classList.remove('hidden');
+            sellSection.classList.add('hidden');
+            buyTab.classList.add('bg-teal-900', 'text-white');
+            sellTab.classList.remove('bg-orange-500', 'text-white');
+        });
+
+        sellTab.addEventListener('click', () => {
+            sellSection.classList.remove('hidden');
+            buySection.classList.add('hidden');
+            sellTab.classList.add('bg-orange-500', 'text-white');
+            buyTab.classList.remove('bg-teal-900', 'text-white');
+        });
+    </script>
+</body>
+</html>

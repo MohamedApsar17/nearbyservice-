@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <link rel="icon" type="x-icon" href="img/anime11.avif" class="rounded-full">
+    <title>HandyConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+</head>
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+
+    <!-- Background Image -->
+    <div class="fixed top-0 right-0 left-0 bottom-0 w-42/40 -z-10 translate-y-[-90%] opacity-5 dark:hidden">
+        <img src="img/bg.jpg" alt="" class="w-full">
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[4%] py-8 flex items-center justify-between z-50 bg-white shadow-md">
+        <img src="image/name.png" class="w-28 cursor-pointer mr-14 dark:hidden "/>
+        <img src="image/name.png" class="w-28 cursor-pointer mr-14 hidden dark:block "/>
+
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#Buy/sell">Buy/Sell</a></li>
+            <li><a href="#message">Message</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button onclick="toggletheme()">
+                <img src="./image/Moon1.png" alt="" class="w-10 dark:hidden"/>
+            </button>
+            <button onclick="toggletheme()">
+                <img src="./image/sun1.png" alt="" class="w-9 hidden dark:block"/>
+            </button>
+            <div class="relative group">
+                <a href="#profile" class="lg:flex items-center gap-3 px-2 py-2">
+                    <img src="./image/user-removebg-preview.png" alt="User Profile" class="w-10">
+                </a>
+                <!-- Dropdown Menu -->
+                <div class="hidden group-hover:block absolute top-12 right-0 bg-white border border-gray-200 rounded shadow-lg">
+                    <ul class="py-2">
+                        <li>
+                            <a href="#settings" class="block px-8 py-2 text-gray-700 hover:bg-gray-100">
+                                ⚙️ Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Loginpage.html" class="block px-10 py-2 text-gray-700 hover:bg-gray-100">
+                                🚪 Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+           
+            <img src="image/coin-removebg-preview.png" class="w-12">
+            <button class="block md:hidden ml-3 w-12" onclick="openMenu()">
+                <img src="image/coin2.jpg" alt="" class="w-3">
+            </button>
+        </div>
+
+        <!-- Side Menu -->
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500">
+            <div class="absolute right-6 top-6 cursor-pointer" onclick="closeMenu()">
+                <img src="img/cross-23.png" alt="Sidebar" class="w-5">
+            </div>
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#Buy/sell" onclick="closeMenu()">Buy/sell</a></li>
+            <li><a href="#message" onclick="closeMenu()">Message</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section (Content Moved Up) -->
+    <div class="pt-24 pb-10 w-full flex flex-col justify-between">
+
+        <!-- Hero Section -->
+        <div class="w-11/12 max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center">
+            <!-- Text Section -->
+            <div class="lg:flex-1 text-center lg:text-left">
+                <h1 class="text-6xl font-Ovo text-red-600 mb-4">
+                    Regional <span class="text-black dark:text-white">Service</span>
+                </h1>
+                <h2 class="text-6xl font-Ovo mb-6">Provider</h2>
+                <p class="text-lg font-Ovo text-gray-700 dark:text-gray-300 mb-6">
+                    Quickest Services at Your Doorstep
+                </p>
+                <a href="#services" class="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-full shadow-lg hover:bg-red-700 transition">
+                    <img src="image/coin-removebg-preview.png" alt="Coin Icon" class="w-6 h-6 mr-2">
+                    Book Your Service Now
+                </a>
+            </div>
+
+            <!-- Image Section -->
+            <div class="lg:flex-1 mt-10 lg:mt-0">
+                <img src="image/homepagepic4.png" alt="Homepage Illustration" class="w-full max-w-md mx-auto">
+            </div>
+        </div>
+
+        <!-- Smaller Boxes Section -->
+        <!-- Smaller Boxes Section -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6 px-4">
+    <div class="max-w-[150px] border border-gray-600 rounded-lg px-10 py-12 hover:bg-lighthover hover:-translate-y-1 duration-500 hover:shadow-black mx-auto"><a href="#Buy/sell">
+        <img src="image/buysell.png" alt="" class="w-22 mx-auto">
+        <h3 class="text-sm my-2 text-black text-center dark:text-purple-500">Buy/Sell</h3></a>
+    </div>
+    <div class="max-w-[150px] border border-gray-600 rounded-lg px-10 py-12 hover:bg-lighthover hover:-translate-y-1 duration-500 hover:shadow-black mx-auto"><a href="#services">
+        <img src="image/man.png" alt="" class="w-16 mx-auto">
+        <h3 class="text-sm my-2 text-black text-center dark:text-purple-500">Service Offering</h3></a>
+    </div>
+    <div class="max-w-[150px] border border-gray-800 rounded-lg px-10 py-12 hover:bg-lighthover hover:-translate-y-1 duration-500 hover:shadow-black mx-auto"><a href="#message">
+        <img src="image/message.png" alt="" class="w-16 mx-auto">
+        <h3 class="text-sm my-2 text-gray-700 text-center">Message</h3>
+        <h3 class="text-sm text-black text-center dark:text-purple-500">within Community</h3></a>
+    </div>
+</div>
+    </div>
+    <div id="services" class="w-full px-[3%] py-8 scroll-mt-10">
+        <h4 class="text-center mb-2 text-4xl font-Ovo text-red-600">SERVICES <span class="text-black dark:text-white">  OFFERING</span> </h4>
+    <section id="services" class="pt-10 pb-16">
+        
+
+        <main class="pt-10 px-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+                <div class="w-36 h-36 border-2 border-blue-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300"><a href="helpman.html">
+                    <img src="image/workman.png" alt="Help Man" class="w-16 mb-2 mt-3">
+                    <p class="text-sm font-medium ">Help Man</p></a>
+                </div>
+                <div class="w-36 h-36 border-2 border-blue-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300"><a href="cleaner.html">
+                    <img src="image/cleaning.png" alt="Cleaner" class="w-16 mb-2 mt-3">
+                    <p class="text-sm font-medium">Cleaner</p></a>
+                </div>
+                <div class="w-36 h-36 border-2 border-red-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300">
+                    <img src="image/carpenter.png" alt="Carpenter" class="w-16 mb-2">
+                    <p class="text-sm font-medium">Carpenter</p>
+                </div>
+                <div class="w-36 h-36 border-2 border-red-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300">
+                    <img src="image/iron.png" alt="Ironing" class="w-16 mb-2">
+                    <p class="text-sm font-medium">Ironing</p>
+                </div>
+                <div class="w-36 h-36 border-2 border-red-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300">
+                    <img src="image/cooking.png" alt="Cooking" class="w-18 mb-0">
+                    <p class="text-sm font-medium">Cooking</p>
+                </div>
+                <div class="w-36 h-36 border-2 border-red-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300">
+                    <img src="image/5makeup.png" alt="Makeup Artist" class="w-16 mb-2">
+                    <p class="text-sm font-medium">Makeup Artist</p>
+                </div>
+                <div class="w-36 h-36 border-2 border-blue-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300">
+                    <img src="image/mechanic.png" alt="Mechanic" class="w-16 mb-2">
+                    <p class="text-sm font-medium">Mechanic</p>
+                </div>
+                <div class="w-36 h-36 border-2 border-blue-500 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition duration-300">
+                    <img src="image/eventmanager.jpg" alt="Event Manager" class="w-16 mb-2">
+                    <p class="text-sm font-medium">Event Manager</p>
+                </div>
+            </div>
+            <div id="Buy/sell" class="w-full px-[3%] py-8 scroll-mt-10">
+            <section id="Buy/sell" class="pt-10 pb-16">
+                <h4 class="text-center mb-2 text-4xl font-Ovo text-red-600">BUY/ <span class="text-black dark:text-white">  SELL</span> </h4>
+
+        
+                <main class="pt-10 px-6">
+                    <div class="w-full flex flex-col lg:flex-row items-center lg:items-start bg-gradient-to-br from-indigo-400 via-teal-400 to-green-500 py-10 px-5 lg:px-20">
+                        <!-- Left Column: Image -->
+                        <div class="lg:w-1/2 w-full flex justify-center items-center">
+                            <img src="image/buysell1.png" alt="Descriptive Image" class="max-w-full h-auto rounded-lg shadow-xl">
+                        </div>
+                    
+                        <!-- Right Column: Buttons -->
+                        <div class="lg:w-1/2 w-full flex flex-col justify-center items-center lg:items-start mt-20 lg:mt-25 lg:pl-40">
+                            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center lg:text-left">
+                                What would you like to do?
+                            </h2>
+                            <div class="flex flex-col gap-4 w-full max-w-xs">
+                                <button class="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg shadow-md text-lg font-medium hover:from-purple-600 hover:to-purple-800 hover:shadow-lg transition"><a href="second.html">
+                                    Buy
+                                </button></a>
+                                <button class="w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-700 text-white rounded-lg shadow-md text-lg font-medium hover:from-orange-600 hover:to-orange-800 hover:shadow-lg transition"><a href="selling.html">
+                                    Sell
+                                </button></a>
+                                <p class="text-lg font-Ovo text-gray-700 mt-15 dark:text-gray-300 ">
+                                    Within Your Region,<span class="text-red">With ur neighbours</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="message" class="w-full px-[3%] py-8 scroll-mt-10">
+                        <section id="message" class="pt-10 pb-2">
+                            <h4 class="text-center mb-2 text-4xl font-Ovo text-red-600">Regional <span class="text-black dark:text-white">Messages</span></h4>
+                    
+                            <main class="pt-2 px-6">
+                                <div class="w-full min-h-screen flex flex-col bg-gray-100 dark:bg-gray-800">
+                                    <!-- Header -->
+                                    <header class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 py-4 px-8 text-white flex justify-between items-center shadow-lg">
+                                        <h1 class="text-2xl font-bold">Global Chat</h1>
+                                        <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg shadow hover:bg-gray-200" onclick="toggleModal()" aria-label="Request Item">
+                                            Request Item
+                                        </button>
+                                    </header>
+                                    
+                                    <!-- Main Content -->
+                                    <div class="flex flex-grow">
+                                        <!-- Sidebar -->
+                                        <aside class="w-1/4 bg-white dark:bg-gray-700 shadow-md p-4">
+                                            <h2 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Chats</h2>
+                                            <ul class="space-y-3">
+                                                <li class="cursor-pointer p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                                                    <span class="font-medium">Global Chat</span>
+                                                </li>
+                                                <li class="cursor-pointer p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                                                    <span class="font-medium"><a href="chatt.html"> Regional Chat</span></a>
+                                                </li>
+                                                <li class="cursor-pointer p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">
+                                                    <span class="font-medium">Individual Chat</span>
+                                                </li>
+                                            </ul>
+                                        </aside>
+                                    
+                                        <!-- Chat Area -->
+                                        <div class="w-3/4 flex flex-col bg-gray-200 dark:bg-gray-900 p-6">
+                                            <!-- Chat Window -->
+                                            <div id="chatWindow" class="flex-grow overflow-y-scroll bg-white dark:bg-gray-700 rounded-lg shadow p-4 space-y-4">
+                                                <!-- Messages will appear here -->
+                                            </div>
+                                    
+                                            <!-- Chat Input -->
+                                            <div class="mt-4 flex items-center space-x-4">
+                                                <input id="messageInput" type="text" class="flex-grow bg-white dark:bg-gray-600 text-gray-800 dark:text-white px-4 py-3 rounded-lg shadow focus:outline-none" placeholder="Type a message...">
+                                                <input id="imageInput" type="file" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                                                <label for="imageInput" class="bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-white px-4 py-2 rounded-lg cursor-pointer shadow hover:bg-gray-400 dark:hover:bg-gray-700">
+                                                    📷
+                                                </label>
+                                                <button aria-label="Send Message" onclick="sendMessage()" class="bg-indigo-500 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-600">
+                                                    Send
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Request Modal -->
+                                    <div id="requestModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                                        <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+                                            <h2 class="text-lg font-bold mb-4">Request an Item</h2>
+                                            <input type="text" placeholder="What do you need?" class="w-full mb-4 px-4 py-2 border rounded-lg">
+                                            <div class="flex justify-end space-x-3">
+                                                <button class="px-4 py-2 bg-gray-200 rounded-lg" onclick="toggleModal()">Cancel</button>
+                                                <button class="px-4 py-2 bg-indigo-500 text-white rounded-lg">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <script>
+                                    // Function to toggle the modal
+                                    function toggleModal() {
+                                        const modal = document.getElementById('requestModal');
+                                        modal.classList.toggle('hidden');
+                                    }
+                    
+                                    // Function to send a message
+                                    function sendMessage() {
+                                        const messageInput = document.getElementById('messageInput');
+                                        const messageText = messageInput.value.trim();
+                                        if (messageText) {
+                                            addMessageToChat('text', messageText);
+                                            messageInput.value = '';
+                                            alert('Message sent!'); // Confirmation message
+                                        }
+                                    }
+                    
+                                    // Function to handle image uploads
+                                    function handleImageUpload(event) {
+                                        const file = event.target.files[0];
+                                        if (file) {
+                                            if (file.size > 5 * 1024 * 1024) { // 5 MB file size limit
+                                                alert('File is too large! Please upload an image under 5MB.');
+                                                return;
+                                            }
+                                            const reader = new FileReader();
+                                            reader.onload = function (e) {
+                                                addMessageToChat('image', e.target.result);
+                                            };
+                                            reader.readAsDataURL(file);
+                                        }
+                                    }
+                    
+                                    // Function to add a message to the chat window
+                                    function addMessageToChat(type, content) {
+                                        const chatWindow = document.getElementById('chatWindow');
+                                        const messageElement = document.createElement('div');
+                                        messageElement.classList.add('flex', 'items-start', 'space-x-3', 'mb-4');
+                                    
+                                        // Add user avatar
+                                        const avatar = document.createElement('img');
+                                        avatar.src = 'path-to-avatar.jpg';
+                                        avatar.alt = 'User Avatar';
+                                        avatar.classList.add('w-10', 'h-10', 'rounded-full');
+                                        messageElement.appendChild(avatar);
+                                    
+                                        // Add message content
+                                        const messageContent = document.createElement('div');
+                                        messageContent.classList.add('p-3', 'rounded-lg', 'shadow', 'max-w-xs', 'break-words');
+                                        if (type === 'text') {
+                                            messageContent.classList.add('bg-gray-100', 'dark:bg-gray-600', 'text-gray-800', 'dark:text-white');
+                                            messageContent.textContent = content;
+                                        } else if (type === 'image') {
+                                            messageContent.classList.add('bg-gray-100', 'dark:bg-gray-600');
+                                            const img = document.createElement('img');
+                                            img.src = content;
+                                            img.alt = 'Sent Image';
+                                            img.classList.add('rounded-lg', 'shadow');
+                                            messageContent.appendChild(img);
+                                        }
+                                        messageElement.appendChild(messageContent);
+                                    
+                                        chatWindow.appendChild(messageElement);
+                                        chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the latest message
+                                    }
+                    
+                                    // Disable auto-scroll when user manually scrolls up
+                                    let isAutoScrolling = true;
+                                    const chatWindow = document.getElementById('chatWindow');
+                                    chatWindow.addEventListener('scroll', function () {
+                                        if (chatWindow.scrollTop < chatWindow.scrollHeight - chatWindow.clientHeight - 100) {
+                                            isAutoScrolling = false;
+                                        } else {
+                                            isAutoScrolling = true;
+                                        }
+                                    });
+                    
+                                    // Auto scroll if enabled
+                                    setInterval(function() {
+                                        if (isAutoScrolling) {
+                                            chatWindow.scrollTop = chatWindow.scrollHeight;
+                                        }
+                                    }, 100);
+                                    
+                                    // Close modal if clicked outside
+                                    window.onclick = function(event) {
+                                        const modal = document.getElementById('requestModal');
+                                        if (event.target === modal) {
+                                            modal.classList.add('hidden');
+                                        }
+                                    };
+                                </script>
+                            </main>
+                        </section>
+                    </div>
+                    
+                            <div id="contact" class="w-full px-[12%] mt-12 py-10 scroll-mt-20 ">
+    <h4 class="text-center mb-2 text-lg font-Ovo">Connect with Us</h4>
+    <h2 class="text-center text-5xl font-Ovo">Get in Touch</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I'd love to hear from you! If you have any questions,comments or feedback, please use the form below.</p>
+    <form action="" class="max-w-2xl mx-auto">
+        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+            <input type="text" placeholder="Enter your name" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:text-black">
+            <input type="text" placeholder="Enter your email" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:text-black">
+        </div>
+        <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:text-black"></textarea>
+        <button class="py-3 px-7 flex items-center justify-between gap-2 bg-black/80 text-white rounded-full  mx-auto hover:bg-black duration-500">Submit now </button>
+    </form>
+
+</div>
+<!---------footer----------->
+<div class="mt-2">
+    <div class="text-center">
+        <img src="./img/name2.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
+        <img src="./img/image-removebg-preview (2).png" alt="" class="w-36 mx-auto mb-2 hidden dark:block">
+
+    <div class="w-max flex items-center gap-2 mx-auto">
+        <img src="./img/mail.png" alt="" class="w-6">handyconnect10@gmail.com
+    </div>
+    </div>
+    <div class="text-center sm:flex items-center justify-between border-t border-grey-400 mx-[10%] my-12 py-6 ">
+       <p> © 2024 HandyConnect. All rights reserved.</p>
+       <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+        <li>Instagram</li>
+        <li>Github</li>
+        <li>LinkedIn</li>
+       </ul>
+    </div>
+</div>
+
+                    
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>

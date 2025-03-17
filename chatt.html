@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Chat App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 bg-blue-600 text-white flex flex-col p-4">
+        <h1 class="text-2xl font-bold mb-4">People Nearby</h1>
+        <ul id="user-list" class="flex-1 overflow-y-auto space-y-2">
+            <!-- Online users dynamically added here -->
+        </ul>
+        <h2 class="text-xl font-semibold mt-6">Suggestions</h2>
+        <ul id="suggestions" class="overflow-y-auto space-y-2 mt-2">
+            <!-- Suggested users dynamically added here -->
+        </ul>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="w-3/4 flex flex-col bg-white">
+        <!-- Header -->
+        <div class="bg-blue-500 text-white p-4 flex justify-between items-center">
+            <span id="chat-header" class="text-xl font-bold">Regional Chat</span>
+            <span id="user-name" class="text-sm italic"></span>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-window" class="flex-1 overflow-y-scroll p-4 space-y-2 bg-gray-50">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="text-gray-500 text-sm px-4 hidden">
+            Someone is typing...
+        </div>
+
+        <!-- Message Input -->
+        <div class="p-4 flex gap-2 border-t">
+            <input
+                id="message-input"
+                type="text"
+                placeholder="Type your message..."
+                class="flex-1 p-2 border rounded focus:outline-none focus:ring focus:ring-blue-300"
+            />
+            <button
+                id="send-btn"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Send
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
