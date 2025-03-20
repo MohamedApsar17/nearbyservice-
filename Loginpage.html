@@ -163,6 +163,11 @@
                 })
                 .then(data => {
                     console.log('Login successful:', data);
+                    const token = data.token;
+                    const expiresAt = data.expires_at;
+
+                    // document.cookie = `token=${encodeURIComponent(token)}; expires=${expiresAt}; path=/; Secure; SameSite=Strict`;
+                    localStorage.setItem("token", token)
                     window.location.href = 'hc.html';
                 })
                 .catch(error => {

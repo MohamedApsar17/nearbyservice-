@@ -259,6 +259,51 @@
                                 </div>
                     
                                 <script>
+                                    document.addEventListener('DOMContentLoaded', async () => {
+                                        console.log("adsadsa")
+                                    try {
+                                        // Fetch the token from localStorage
+                                        const token = localStorage.getItem('token');
+
+                                        // Check if the token exists
+                                        if (!token) {
+                                            console.error('No token found');
+                                            redirectToLoginPage();
+                                            return;
+                                        }
+
+                                        // Send the token to the server for validation
+                                        const response = await fetch("http://localhost:8000/is_valid_token", {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+                                            }
+                                        });
+
+                                        const data = await response.json();
+
+                                        // Handle the validation result
+                                        if (!data.valid) {
+                                            console.error('Token is invalid');
+                                            redirectToLoginPage();
+                                            return;
+                                        }
+
+                                        console.log('Token is valid');
+                                    } catch (error) {
+                                        console.error('Error during token validation:', error.message);
+                                        redirectToLoginPage();
+                                    }
+                                });
+
+                                function redirectToLoginPage() {
+                                    // Clear the token from localStorage
+                                    localStorage.removeItem('token');
+
+                                    // Redirect to the login page
+                                    window.location.href = 'LoginPage.html';
+                                }
                                     // Function to toggle the modal
                                     function toggleModal() {
                                         const modal = document.getElementById('requestModal');
